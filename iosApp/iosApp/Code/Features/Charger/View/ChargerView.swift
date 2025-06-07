@@ -22,39 +22,28 @@ struct ChargerView: View {
                 if viewModel.isLoading {
                     LoadingView()
                 } else if let charger = viewModel.charger {
-                    if viewModel.showAllChargers {
-                        AllChargersView(
-                            viewModel: viewModel,
-                            navigationPath: $navigationPath
-                        )
-                        .transition(.asymmetric(
-                            insertion: .move(edge: .trailing).combined(with: .opacity),
-                            removal: .move(edge: .leading).combined(with: .opacity)
-                        ))
-                    } else {
-                        ScrollView {
-                            VStack(spacing: 20) {
-                                ChargerCardView(
-                                    navigationPath: $navigationPath,
-                                    charger: charger,
-                                    isFeatured: true
-                                )
+                    ScrollView {
+                        VStack(spacing: 20) {
+                            ChargerCardView(
+                                navigationPath: $navigationPath,
+                                charger: charger,
+                                isFeatured: true
+                            )
+                            .padding(.horizontal)
+                            .padding(.top, 20)
+                            
+                            QuickStatsView()
                                 .padding(.horizontal)
-                                .padding(.top, 20)
-                                
-                                QuickStatsView()
-                                    .padding(.horizontal)
-                                
-                                RecentActivityView()
-                                    .padding(.horizontal)
-                                    .padding(.bottom, 30)
-                            }
+                            
+                            RecentActivityView()
+                                .padding(.horizontal)
+                                .padding(.bottom, 30)
                         }
-                        .transition(.asymmetric(
-                            insertion: .move(edge: .leading).combined(with: .opacity),
-                            removal: .move(edge: .trailing).combined(with: .opacity)
-                        ))
                     }
+                    .transition(.asymmetric(
+                        insertion: .move(edge: .leading).combined(with: .opacity),
+                        removal: .move(edge: .trailing).combined(with: .opacity)
+                    ))
                 } else {
                     EmptyStateView()
                 }
@@ -64,6 +53,8 @@ struct ChargerView: View {
             switch destination {
             case .Charger:
                 ChargerView(navigationPath: $navigationPath)
+            case .AllChargersView:
+                AllChargersView(navigationPath: $navigationPath)
             case .ChargerDetails(let charger):
                 ChargerDetailsView(
                     navigationPath: $navigationPath,
@@ -96,17 +87,12 @@ struct ChargerView: View {
     private func ShowAllChargersButton() -> some View {
         Button {
             log.info("Show all chargers tapped")
-            withAnimation(.spring(response: 0.3)) {
-                viewModel.showAllChargers.toggle()
-                if viewModel.showAllChargers {
-                    Task { await viewModel.getAllChargers() }
-                }
-            }
+            navigationPath.append(NavigationDestination.AllChargersView)
         } label: {
             HStack(spacing: 6) {
-                Image(systemName: viewModel.showAllChargers ? "square.grid.2x2" : "square.grid.3x3")
+                Image(systemName: "square.grid.2x2")
                     .font(.system(size: 16, weight: .medium))
-                Text(viewModel.showAllChargers ? "Featured" : "Show All")
+                Text("Show All")
                     .font(.system(size: 15, weight: .semibold))
             }
             .foregroundColor(.evcGreen)

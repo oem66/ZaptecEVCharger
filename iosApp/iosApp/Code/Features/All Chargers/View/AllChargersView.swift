@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct AllChargersView: View {
-    @ObservedObject var viewModel: ChargerViewModel
+    @StateObject private var viewModel = AllChargersViewModel()
     @Binding var navigationPath: NavigationPath
     
     var body: some View {
