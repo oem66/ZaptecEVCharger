@@ -10,5 +10,5 @@ import Foundation
 import shared
 
 enum NavigationDestination: Hashable {
-    case Charger, ChargerDetails(ChargerModel)
+    case Charger, AllChargersView, ChargerDetails(ChargerModel)
 }
