@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import shared
 
+@MainActor
 final class AllChargersViewModel: ObservableObject {
     @Published private(set) var allChargers: [ChargerModel] = []
     @Published private(set) var visibleChargers: [ChargerModel] = []
