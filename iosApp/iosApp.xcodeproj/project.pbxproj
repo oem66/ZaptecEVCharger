@@ -11,6 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		3E53EAAB2DF4806C00EDD723 /* AllChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53EAAA2DF4806C00EDD723 /* AllChargersViewModel.swift */; };
+		3E53EAAE2DF4862E00EDD723 /* ChargerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53EAAD2DF4862E00EDD723 /* ChargerDetailsViewModel.swift */; };
 		3E9EA7422DDF5FBD0071596E /* ChargerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA7412DDF5FBD0071596E /* ChargerCardView.swift */; };
 		3E9EA7442DDF5FE00071596E /* ChargerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA7432DDF5FE00071596E /* ChargerViewModel.swift */; };
 		3E9EA7472DDF60CF0071596E /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9EA7462DDF60CF0071596E /* SwiftyBeaver */; };
@@ -54,6 +55,7 @@
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		3E53EAAA2DF4806C00EDD723 /* AllChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChargersViewModel.swift; sourceTree = "<group>"; };
+		3E53EAAD2DF4862E00EDD723 /* ChargerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerDetailsViewModel.swift; sourceTree = "<group>"; };
 		3E9EA7412DDF5FBD0071596E /* ChargerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerCardView.swift; sourceTree = "<group>"; };
 		3E9EA7432DDF5FE00071596E /* ChargerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerViewModel.swift; sourceTree = "<group>"; };
 		3E9EA7492DDF63E70071596E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		3E53EAAC2DF4861700EDD723 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E53EAAD2DF4862E00EDD723 /* ChargerDetailsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		3E9EA7352DDF5BE90071596E /* Charger */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				3E9EA7532DDF88F00071596E /* View */,
+				3E53EAAC2DF4861700EDD723 /* View Model */,
 			);
 			path = "Charger Details";
 			sourceTree = "<group>";
@@ -430,6 +441,7 @@
 				3E9EA7422DDF5FBD0071596E /* ChargerCardView.swift in Sources */,
 				3E9EA7442DDF5FE00071596E /* ChargerViewModel.swift in Sources */,
 				3E9EA7552DDF88F90071596E /* ChargerDetailsView.swift in Sources */,
+				3E53EAAE2DF4862E00EDD723 /* ChargerDetailsViewModel.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				3E9EA74A2DDF63E70071596E /* LoadingView.swift in Sources */,
 				3E9EA74C2DDF737B0071596E /* ChargerService.swift in Sources */,
